@@ -32,7 +32,7 @@ var handlers = {
 
         var cardTitle = this.t("DISPLAY_CARD_TITLE", this.t("SKILL_NAME"), itemName);
         var recipes = this.t("RECIPES");
-        var recipe = recipes[itemName];
+        var recipe = recipes[itemName].description;
 
         if (recipe) {
             this.attributes['speechOutput'] = recipe;
@@ -82,8 +82,8 @@ var languageStrings = {
     "en": {
         "translation": {
             "RECIPES": recipes.RECIPE_EN_US,
-            "SKILL_NAME": "Minecraft Helper",
-            "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s the recipe for a chest? ... Now, what can I help you with.",
+            "SKILL_NAME": "Drinking buddy",
+            "WELCOME_MESSAGE": "Welcome to %s. You can ask a question like, what\'s in a mojito? ... Now, what can I help you with.",
             "WELCOME_REPROMPT": "For instructions on what you can say, please say help me.",
             "DISPLAY_CARD_TITLE": "%s  - Recipe for %s.",
             "HELP_MESSAGE": "You can ask questions such as, what\'s the recipe, or, you can say exit...Now, what can I help you with?",
@@ -99,20 +99,20 @@ var languageStrings = {
     "en-US": {
         "translation": {
             "RECIPES" : recipes.RECIPE_EN_US,
-            "SKILL_NAME" : "American Minecraft Helper"
+            "SKILL_NAME" : "American Drinking Buddy"
         }
     },
     "en-GB": {
         "translation": {
             "RECIPES": recipes.RECIPE_EN_GB,
-            "SKILL_NAME": "British Minecraft Helper"
+            "SKILL_NAME": "British drinking buddy"
         }
     },
     "de": {
         "translation": {
             "RECIPES" : recipes.RECIPE_DE_DE,
-            "SKILL_NAME" : "Assistent für Minecraft in Deutsch",
-            "WELCOME_MESSAGE": "Willkommen bei %s. Du kannst beispielsweise die Frage stellen: Welche Rezepte gibt es für eine Truhe? ... Nun, womit kann ich dir helfen?",
+            "SKILL_NAME" : "Assistent für trinken in Deutsch",
+            "WELCOME_MESSAGE": "Willkommen in% s. Du kannst eine Frage stellen, was ist in einem Mojito? ... Nun, was kann ich dir helfen?",
             "WELCOME_REPROMPT": "Wenn du wissen möchtest, was du sagen kannst, sag einfach „Hilf mir“.",
             "DISPLAY_CARD_TITLE": "%s - Rezept für %s.",
             "HELP_MESSAGE": "Du kannst beispielsweise Fragen stellen wie „Wie geht das Rezept für“ oder du kannst „Beenden“ sagen ... Wie kann ich dir helfen?",
