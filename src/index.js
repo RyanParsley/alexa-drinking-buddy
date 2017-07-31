@@ -21,7 +21,7 @@ var handlers = {
         // If the user either does not reply to the welcome message or says something that is not
         // understood, they will be prompted again with this text.
         this.attributes['repromptSpeech'] = this.t("WELCOME_REPROMPT");
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech']);
     },
     'RecipeIntent': function () {
         var itemSlot = this.event.request.intent.slots.Item;
@@ -32,6 +32,8 @@ var handlers = {
 
         var cardTitle = this.t("DISPLAY_CARD_TITLE", this.t("SKILL_NAME"), itemName);
         var recipes = this.t("RECIPES");
+        console.log("recipes: ", recipes);
+        console.log('itemName: ', itemName);
         var recipe = recipes[itemName].description;
 
         if (recipe) {
@@ -57,7 +59,7 @@ var handlers = {
     'AMAZON.HelpIntent': function () {
         this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
         this.attributes['repromptSpeech'] = this.t("HELP_REPROMPT");
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech']);
     },
     'AMAZON.RepeatIntent': function () {
         this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
@@ -74,7 +76,7 @@ var handlers = {
     'Unhandled': function () {
         this.attributes['speechOutput'] = this.t("HELP_MESSAGE");
         this.attributes['repromptSpeech'] = this.t("HELP_REPROMPT");
-        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
+        this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech']);
     }
 };
 
